@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #002244;
+  font-weight: 700;
+}
+
+.dark h1 {
+  color: #ffffff;
+}
+
+.form-wrapper {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f2f6ff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  color: #1a1a1a;
+}
+
+.job-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+fieldset {
+  border: 1.5px solid #d0e1ff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+legend {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #002a4e;
+  padding: 0 10px;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+input[type="file"] {
+  border: none;
+}
+
+label {
+  font-weight: 500;
+  display: block;
+  margin-top: 1rem;
+}
+
+.required {
+  color: red;
+  margin-left: 4px;
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+/* NEW: Gender / Resume alignment */
+.form-group {
+  margin-top: 1rem;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.3rem;
+}
+
+.radio-group label {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Skills layout: responsive columns */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.skills-container label {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button[type="submit"] {
+  background-color: #0044cc;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #005ce6;
+}
+
+/* Grid layout on wider screens */
+@media (min-width: 768px) {
+  .job-form fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 2rem;
+  }
+
+  legend {
+    grid-column: 1 / -1;
+  }
+
+  textarea,
+  input[type="file"],
+  .job-form button,
+  .skills-container,
+  .form-group.full-width {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Dark mode support */
+.dark body {
+  background: #121212;
+}
+
+.dark .form-wrapper {
+  background: #1f1f1f;
+  color: #f0f0f0;
+}
+
+.dark fieldset {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+
+.dark input,
+.dark select,
+.dark textarea {
+  background: #333;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+.dark button[type="submit"] {
+  background-color: #0a84ff;
+}
+
+.dark button[type="submit"]:hover {
+  background-color: #339eff;
+}
+
+.dark .error {
+  color: #ff6666;
+}
